@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h3><span>Oge's </span>Menu<span>.com</span></h3>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Swallows</a></li>
+                    <li><a href="">Snacks</a></li>
+                    <li><a href="">Drinks</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="foods">
+            <div class="row">
+                <div class="col col-1">
+                    <h2><span>Craving <br>something <br> tasty?</span><br>We're always ready!</h2>
+                    <p>Come hungry and ready to enjoy a cozy, relaxed time together, we'd love to have you here!</p>
+                    <button type="button">Explore More</button>
+                </div>
+
+                <div class="col col-2">
+                    <img src="rice.png" alt="plate of rice">
+                </div> 
+            </div>
+        </section>
+    </main>
+    
+    
+    <section class="box">
+        <div class="card-container">
+            
+            <div class="card con1">
+                <div class="card-image">
+                    <img src="shawarma.png" alt="shawarma">
+                </div>
+                <h5>Shawarma</h5>
+                <p>Juicy, spicy, and wrapped with love—perfect for every craving.</p>
+                <p class="price">N2,000</p>
+            </div>
+            
+            <div class="card con2">
+                <div class="card-image">
+                    <img src="burger.png" alt="Burger">
+                </div>
+                <h5>Burger</h5>
+                <p>Stacked, juicy, cheesy goodness that satisfies every burger lover's dream.</p>
+                <p class="price">N5,500</p>
+            </div>
+
+            <div class="card con3">
+                <div class="card-image">
+                    <img src="pizza.png" alt="Pizza">
+                </div>
+                <h5>Pizza</h5>
+                <p>Cheesy, hot, and loaded—each slice brings instant happiness.</p>
+                <p class="price">N15,000</p>
+            </div>
+
+            <div class="card con4">
+                <div class="card-image">
+                    <img class="cake" src="cake.png" alt="Cake">
+                </div>
+                <h5>Cake</h5>
+                <p>Freshly baked, soft, and perfect for every meal or snack.</p>
+                <p class="price">N12,700</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+      
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
+        
+    </script>
+</body>
+</html>

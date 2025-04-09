@@ -1,0 +1,309 @@
+*{
+    padding: 0;
+    margin: 0; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: tomato;
+}
+
+header {
+    background-color: tomato;
+    padding: 1em;
+}
+
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+h3 {
+    color: black;
+    font-size: 1.5rem;
+}
+
+span {
+    color: #fff;
+}
+
+.row span {
+    animation: colorCycle 2s infinite;
+}
+
+@keyframes colorCycle {
+    0%   { color: #E52020; }
+    100%  { color: orange; }
+}
+
+nav ul li {
+   list-style: none;
+   display: inline-block;
+   margin-left: 40px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #FFECDB;
+    border-bottom: 2px solid #FFECDB;
+}
+
+.foods {
+    background-color: #FFECDB; 
+    width: 100%;
+    min-height: auto;
+    padding: 5% 10%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.col-1, .col-2 {
+    flex: 1 1 45%; 
+  }
+
+.row h2 {
+    color: #3E3F5B;
+    font-size: 3rem;
+}
+
+.row p {
+    color: #3E3F5B;
+    font-size: 15px;
+    line-height: 25px;
+    margin-top: 30px;
+}
+
+.row button {
+    width: 180px;
+    padding: 12px;
+    color: #fff;
+    font-size: 16px;
+    background-color: tomato;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+}
+
+.row button:hover {
+    color: #3E3F5B;
+    background-color: #FFDDAB;
+    cursor: pointer;
+    box-shadow: 0 0 10px tomato;
+    transition: 0.8s ease;
+}
+
+.row img {
+    width: 250px;
+    height: auto;
+    text-align: right;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box {
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Keeps it from stretching too wide */
+    margin: 0 auto;     /* Centers the container */
+    box-sizing: border-box;
+    justify-items: center; /* Centers individual cards inside each grid cell */
+}
+
+.card {
+    position: relative; /* Important for absolute positioning inside */
+    width: 200px;
+    background-color: #FFDDAB;
+    border: 2px solid #FFECDB;
+    border-radius: 10px;
+    padding: 40px 15px 15px; /* Add top padding to give space for image */
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+}
+
+.card-image {
+    position: absolute;
+    top: -30px; /* Push image above the card */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-image img {
+    width: 100px;
+    height: auto;
+}
+
+
+.card-container .cake {
+    width: 70px;
+    height: auto;
+}
+
+.card-container h5 {
+    font-size: 25px;
+    padding-bottom: 12px;
+}
+
+.card-container p {
+    font-size: 12px;
+}
+
+.card-container .price {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #main-content {
+        transition: margin-top 0.6s ease;
+    }
+
+    body.menu-open #main-content {
+        margin-top: 180px;
+    }
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+
+        text-align: center;
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-left: 1em;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    } 
+
+    nav.active {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .navbar h3 {
+        order: 1;
+        text-align: left;
+        flex: 1;
+    }
+    
+    .hamburger {
+        display: block;
+        order: 2;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .row {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .col-1, .col-2 {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .col-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-2 img {
+        width: 200px;
+        height: auto;
+        margin: 0 auto;
+        animation: spin 10s linear infinite;
+    }
+
+    .row h2 {
+        font-size: 2rem;
+    }
+
+    .row p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .row button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card-container img {
+        width: 80px;
+    }
+
+    .card-container h5 {
+        font-size: 20px;
+    }
+
+    .card-container p {
+        font-size: 10px;
+    }
+}
